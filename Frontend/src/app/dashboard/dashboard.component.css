@@ -1,0 +1,51 @@
+body{
+    background-color: #f7f7ff;
+    margin-top:20px;
+}
+.btn-white {
+    background-color: #fff;
+    
+}
+.radius-15 {
+    border-radius: 15px;
+}
+
+.bg-col {
+    background-color: rgba(0, 0, 0, 0.411)!important;
+    
+}
+
+
+
+
+.card1{
+    position: absolute;
+    left:220px;
+    width: 500px;
+}
+#img1{
+    border-radius: 15px;
+    margin-left: 0;
+    height: 360px;
+    width: 100%;
+}
+#img2{
+    border-radius: 15px;
+    margin-left: 0;
+    height: 360px;
+    width: 100%;
+}
+
+.card2{
+    position: absolute;
+    right: 220px;
+    width: 500px;
+}
+
+.container{
+    margin-top: 80px;
+}
+
+
+    
+    

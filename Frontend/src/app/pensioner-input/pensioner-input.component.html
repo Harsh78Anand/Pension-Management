@@ -1,0 +1,76 @@
+
+
+<div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-xl-6">
+            <div class="card" style="border-radius: 1rem;">
+            
+                <div class="col-md-12 col-lg-12 d-flex align-items-center">
+                    <div class="card-body p-4 p-lg-5 text-black">
+                        <form (ngSubmit)="onSubmit()" #pensionerForm="ngForm" name="pensionerForm">
+                            <div class="d-flex align-items-center mb-3 pb-1">
+                                <span class="h2 fw-bold mb-0">Check Your Pension Amount</span>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label"> Name</label>
+                                <input  class="form-control form-control-md" type="text" name="name" [(ngModel)]="pensioner.name" #name="ngModel" minlength="2" maxlength="15" [ngClass]="{ 'is-invalid': pensionerForm.submitted && name.invalid }" pattern="^[a-zA-Z\s]*$" required> 
+                                <div class="invalid-feedback" *ngIf="pensionerForm.submitted && name.invalid">
+                                    <p *ngIf="name.errors?.required">Name is required</p>
+                                    <p *ngIf="name.errors?.pattern">Name invalid</p>
+                                    <p *ngIf="name.errors?.minlength">Name must be of at least 2 characters</p>
+                                    <p *ngIf="name.errors?.maxlength">Name must be of maximum 15 characters</p>
+                                </div> 
+                                <!-- <input required [(ngModel)]="user.userName" #userName="ngModel" name="userName" type="text" id="form2Example17" class="form-control form-control-lg" [ngClass]="{ 'is-invalid': loginForm.submitted && userName.invalid }" pattern="^[A-Za-z0-9_]*$"/>
+                                <div class="invalid-feedback" *ngIf="loginForm.submitted && userName.invalid">
+                                    <p *ngIf="userName.errors?.required">Username is required</p>
+                                    <p *ngIf="userName.errors?.pattern">Username invalid</p>
+                                </div> -->
+                            </div>
+                            <br>
+                            <div class="form-outline mb-4">
+                                <label class="form-label"> Aadhaar</label>
+
+                                
+                                <input  class="form-control form-control-md" type="text" name="aadhaarNumber" [(ngModel)]="pensioner.aadhaarNumber" #aadhaarNumber="ngModel" [ngClass]="{ 'is-invalid': pensionerForm.submitted && aadhaarNumber.invalid }" pattern="^[0-9]*$"  required> 
+                                <div class="invalid-feedback" *ngIf="pensionerForm.submitted && aadhaarNumber.invalid">
+                                    <p *ngIf="aadhaarNumber.errors?.required">Aadhaar number is required</p>
+                                    <p *ngIf="aadhaarNumber.errors?.pattern">Invalid Aadhaar number </p>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="form-outline mb-4">
+                                <label class="form-label"> Pan</label>
+
+                                <input  class="form-control form-control-md" type="text" name="pan" [(ngModel)]="pensioner.pan" #pan="ngModel" [ngClass]="{ 'is-invalid': pensionerForm.submitted && pan.invalid }"  required> 
+                                <div class="invalid-feedback" *ngIf="pensionerForm.submitted && pan.invalid">
+                                    <p *ngIf="pan.errors?.required">Pan number is required</p>
+                                    <p *ngIf="pan.errors?.pattern">Invalid Pan number </p>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="form-outline mb-4">
+                                <label class="form-label">Date of Birth</label>
+
+                                <input type="date" id="dOB" class="form-control form-control-md" name="dateOfBirth" [(ngModel)]="pensioner.dateOfBirth" #dateOfBirth="ngModel" (keydown)="disableDate()" [max]="getToday()" [ngClass]="{ 'is-invalid': pensionerForm.submitted && dateOfBirth.invalid }"  required> 
+                                <div class="invalid-feedback" *ngIf="pensionerForm.submitted && dateOfBirth.invalid">
+                                    <p *ngIf="dateOfBirth.errors?.required">Date of birth is required</p>
+                                    <p *ngIf="dateOfBirth.errors?.max">Date of birth cannot be future date</p>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="form-outline mb-4">
+                                <label class="form-label">Family Pension</label> 
+                                <input  style="margin-left: 10px;"  type="radio" name="selfPension" id="familyPension" #familyPension="ngModel" [value] =true [(ngModel)] = "pensioner.familyPension">
+                                <label class="form-label" style="margin-left: 10px;"> Yes </label>
+                                <input   style="margin-left: 10px;" type="radio" name="permanent" id="familyPension" #familyPension = "ngModel" [value] =false [(ngModel)] ="pensioner.familyPension">
+                                <label class="form-label" style="margin-left: 10px;"> No </label>
+                            </div>
+                            <button class="btn btn-dark btn-lg btn-block" type="previous" onclick='(function(){ window.location.href = "/dashboard" })();'>Previous</button>
+                            <button class="btn btn-dark btn-lg btn-block" type="submit" id="btn2">Save</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

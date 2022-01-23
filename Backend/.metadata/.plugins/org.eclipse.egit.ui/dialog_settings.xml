@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="EGit.KnownHosts">
+		<item value="git.eclipse.org"/>
+		<item value="github.com"/>
+		<item value="bitbucket.org"/>
+	</list>
+	<list key="RepositorySelectionPage.UsedUris">
+		<item value="https://git-codecommit.us-east-2.amazonaws.com/v1/repos/ij027-pod5-backend"/>
+		<item value="https://git-codecommit.us-east-2.amazonaws.com/v1/repos/ij027-pod5-disbursement-repo"/>
+	</list>
+	<section name="org.eclipse.egit.ui.internal.staging.StagingView">
+		<item key="HORIZONTAL_SASH_FORM_WEIGHT" value="500,500"/>
+		<item key="STAGING_SASH_FORM_WEIGHT" value="500,500"/>
+		<item key="sortItemState" value="false"/>
+	</section>
+	<section name="GitCommitMessageComponent">
+		<list key="C:\Users\Harsh\Desktop\pension disbursement\ij027-pod5-disbursement-repo\.git">
+			<item value="false"/>
+			<item value="Harsh &lt;916364@cognizant.com&gt;"/>
+			<item value="added"/>
+			<item value="Harsh &lt;916364@cognizant.com&gt;"/>
+			<item value="0000000000000000000000000000000000000000"/>
+			<item value="0"/>
+			<item value="false"/>
+		</list>
+	</section>
+</section>

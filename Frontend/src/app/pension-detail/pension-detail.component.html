@@ -1,0 +1,48 @@
+<div class="modle-body">
+    <div class="container" style="align-content: center; margin-left: 75px;">
+        <div class="heading">
+          <h1>Pension Details</h1>
+        </div>
+
+    </div>
+
+    
+    <table id="styled-table" class="table table-striped table-hover table-bordered" style="margin-top: 70px; width: 33%; margin-left: 100px;" >
+        <thead>
+        <tr>
+            <th scope="col">Info</th>
+            <th scope="col">Details</th>
+            
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">Name</th>
+            <td >{{pensioner?.name}}</td>
+            
+        </tr>
+        <tr>
+            <th scope="row">Date Of Birth</th>
+            <td>{{pensioner?.dateOfBirth}}</td>
+            
+        </tr>
+        <tr>
+            <th scope="row">Pan Number </th>
+            <td> {{pensioner?.pan}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Pension Amount </th>
+            <td> {{pensioner?.pensionAmount}} </td>
+        </tr>
+        <tr>
+            <th scope="row">Family Pension </th>
+            <td *ngIf="pensioner?.familyPension; else elseBlock"> Yes</td>
+            <ng-template #elseBlock><td>No</td></ng-template>
+
+        </tr>
+        </tbody>
+    </table>
+    
+    <button  class="btn btn-dark btn-lg btn-block" type="submit" onclick='(function(){ window.location.href = "/dashboard" })();'>Main Menu</button>
+    
+</div>

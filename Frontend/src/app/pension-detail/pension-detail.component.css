@@ -1,0 +1,71 @@
+.th {
+    padding-left: 550px;
+}
+#styled-table {
+   
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 1rem;
+        font-family: sans-serif;
+        min-width: 400px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.10);
+  
+        border-radius: 20px;
+        
+}
+
+#styled-table thead tr {
+    background-color: rgba(0, 0, 0, 0.719);
+    color: #ffffff;
+    text-align: left;
+    border-radius: 20px;
+}
+
+#styled-table th,
+#styled-table td {
+    padding: 12px 15px;
+}
+#styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+#styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f300;
+}
+
+#styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.719);
+}
+#styled-table tbody tr:hover {
+    font-weight: bold;
+    background:rgba(0, 0, 0, 0.219);
+}
+
+.heading{
+
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    
+
+}
+
+.heading h1 {
+  text-align:center; font-size:40px; text-transform:uppercase; color:#222; letter-spacing:1px;
+  font-family:"Playfair Display", serif; font-weight:400;
+  margin-left: 30px;
+}
+.modle-body{
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.027);
+    width: 600px;
+    height: 600px;
+    margin-left: 400px;
+    border-radius: 2%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+button{
+    margin-top: 10px;
+    margin-left: 230px;
+}

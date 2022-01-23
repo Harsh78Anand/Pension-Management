@@ -1,0 +1,33 @@
+version: 0.2
+run-as: root
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto11
+      docker: 18
+  pre_build:
+    commands:
+      - echo "Pre_build"
+      - echo "Logging in to Amazon ECR"
+      - $(aws ecr get-login  --no-include-email --region us-east-2)
+  build:
+    commands:
+      - echo "Build"
+      - echo "Entered build phase"
+      - echo "Building Java"
+      - cd  pensiondisbursement
+      - mvn -DskipTests clean package
+      - docker build -t ij027-pod5-pensiondisbursement-registry:latest .
+      - docker tag ij027-pod5-pensiondisbursement-registry:latest 941516478045.dkr.ecr.us-east-2.amazonaws.com/ij027-pod5-pensiondisbursement-registry:latest
+
+  post_build:
+    commands:
+      - echo "Post_build"
+      - docker push 941516478045.dkr.ecr.us-east-2.amazonaws.com/ij027-pod5-pensiondisbursement-registry:latest
+      - printf '[{"name":"pensiondisbursement-container","imageUri":"%s"}]' 941516478045.dkr.ecr.us-east-2.amazonaws.com/ij027-pod5-pensiondisbursement-registry:latest > taskdefinition.json
+      - cat taskdefinition.json
+
+artifacts:
+  files:
+    - pensiondisbursement/taskdefinition.json

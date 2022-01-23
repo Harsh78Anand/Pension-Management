@@ -1,0 +1,50 @@
+<div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-xl-6">
+            <div class="card" style="border-radius: 1rem;">
+            
+                <div class="col-md-12 col-lg-12 d-flex align-items-center">
+                    <div class="card-body p-4 p-lg-5 text-black">
+                        <form #processForm="ngForm" class="process-pension" (ngSubmit)="frmSub(processForm)">
+                            <div class="d-flex align-items-center mb-3 pb-1">
+                                <span class="h2 fw-bold mb-0">Validate Your Pension Amount</span>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label">Aadhaar Number</label>
+                                <input type="text" name="aadhaarNumber" class="form-control form-control-md"  #aadhaarNumber="ngModel" [(ngModel)] = "processPensionInput.aadhaarNumber" [ngClass]="{ 'is-invalid': processForm.submitted && aadhaarNumber.invalid }" ngModel pattern="^[0-9]*$" required >
+                                <div class="invalid-feedback" *ngIf="processForm.submitted && aadhaarNumber.invalid">
+                                    <p *ngIf="aadhaarNumber.errors?.required">Aadhar number is required</p>
+                                    <p *ngIf="aadhaarNumber.errors?.pattern">Aadhar number must be a number</p>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="form-outline mb-4">
+                                <label class="form-label"> Pension Amount: </label>
+
+                                
+                                <input type="text" class="form-control form-control-md" name="pensionAmount" #pensionAmount="ngModel" [(ngModel)] = "processPensionInput.pensionAmount" [ngClass]="{ 'is-invalid': processForm.submitted && pensionAmount.invalid }" ngModel pattern="^[0-9]*$"  required>
+                                <div class="invalid-feedback" *ngIf="processForm.submitted && pensionAmount.invalid">
+                                    <p *ngIf="pensionAmount.errors?.required">Amount is required</p>
+                                    <p *ngIf="pensionAmount.errors?.pattern">Amount must be a number</p>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="form-outline mb-4">
+                                <label class="form-label"> Bank Service charge : </label>
+
+                                 <input type="text" class="form-control form-control-md" name="bankServiceCharge" #bankServiceCharge="ngModel"  [(ngModel)] = "processPensionInput.bankServiceCharge" [ngClass]="{ 'is-invalid': processForm.submitted && bankServiceCharge.invalid }" ngModel pattern="^[0-9]*$" required>
+                                <div class="invalid-feedback" *ngIf="processForm.submitted && bankServiceCharge.invalid">
+                                    <p *ngIf="bankServiceCharge.errors?.required">Service Charge is required</p>
+                                    <p *ngIf="bankServiceCharge.errors?.pattern">Service Charge must be a number</p>
+                                </div>
+                            </div>
+                            <br>
+                            <button class="btn btn-dark btn-lg btn-block" type="reset" onclick='(function(){ window.location.href = "/pensioner-input" })();' >Previous</button>
+                            <button class="btn btn-dark btn-lg btn-block" type="submit" id="btn2" >Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
